@@ -16,6 +16,19 @@
     margin-top: 20px;
     width: 300px; /* Adjust width as needed */
   }
+
+  .welcome-card {
+    border: 2px solid rgb(124, 124, 206);
+    border-radius: 10px; /* Rounded edges */
+    background-color: #FFFFFF; /* Different color inside the card */
+    padding: 20px;
+    margin-top: 20px;
+    width: 550px; /* Adjust width as needed */
+  }
+  
+  .signup-title {
+    text-align: center;
+  }
   
   .signup-container form {
     display: flex;
@@ -50,5 +63,18 @@
     display: block;
     margin-top: 10px;
     text-align: center;
+  }
+  
+  .footer {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #333; /* Footer background color */
+    color: #fff; /* Footer text color */
+    padding: 10px 0;
+  }
+  
+  .footer a {
+    color: #fff; /* Link color in footer */
   }
   
