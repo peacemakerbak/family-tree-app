@@ -1,65 +1,128 @@
-// This component serves as the main dashboard for users.
-// It displays the user's basic profile information and allows the user to add details for multiple family members.
-// Users can dynamically add more fields to input additional family members.
-
 import React, { useState } from 'react';
+import './Dashboard.css';
 
 const Dashboard = () => {
-  // State to hold the list of family members. Each member is an object with 'name' and 'email'.
-  const [familyMembers, setFamilyMembers] = useState([{name: '', email: ''}]);
+  // State to hold parent information
+  const [parents, setParents] = useState([
+    { name: '', relationship: 'Mom', email: '' },
+    { name: '', relationship: 'Dad', email: '' }
+  ]);
 
-  // Function to add an empty member to the familyMembers state, allowing the user to input another family member's details.
+  // State to hold sibling information
+  const [siblings, setSiblings] = useState([
+    { name: '', relationship: 'Brother', email: '' },
+    { name: '', relationship: 'Sister', email: '' },
+    { name: '', relationship: 'Sister', email: '' }
+  ]);
+
+  // Function to add an empty sibling input field
   const handleAddSibling = () => {
-    setFamilyMembers([...familyMembers, {name: '', email: ''}]);
+    setSiblings([...siblings, { name: '', relationship: '', email: '' }]);
   };
 
-  // Function to update the state as the user types in input fields.
-  // It updates the specific member's name or email based on which input field is being edited.
-  const handleInputChange = (index, event) => {
-    const values = [...familyMembers]; // Create a copy of the familyMembers array
-    values[index][event.target.name] = event.target.value; // Update the value of the input field that was changed
-    setFamilyMembers(values); // Set the new state
+  // Function to remove a sibling input field
+  const handleDeleteSibling = (index) => {
+    if (siblings.length > 3) {
+      const updatedSiblings = [...siblings];
+      updatedSiblings.splice(index, 1);
+      setSiblings(updatedSiblings);
+    }
   };
 
-  // Function to handle the form submission.
-  // This would typically involve validating the data and sending it to a server.
+  // Function to handle input changes for parents
+  const handleParentInputChange = (index, event) => {
+    const values = [...parents];
+    values[index][event.target.name] = event.target.value;
+    setParents(values);
+  };
+
+  // Function to handle input changes for siblings
+  const handleSiblingInputChange = (index, event) => {
+    const values = [...siblings];
+    values[index][event.target.name] = event.target.value;
+    setSiblings(values);
+  };
+
+  // Function to handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-    // Logic to send invites or save data would go here.
-    console.log(familyMembers); // This line could be used for debugging to see the state when form is submitted
+    e.preventDefault();
+    // Logic to send emails and handle submission
   };
 
   return (
-    <div>
-      <h1>Your Dashboard</h1>
-      <div>
-        <p>Name: User's Name</p> 
-        <p>Email: user@example.com</p> 
+    <div className="dashboard-container">
+      <div className="dashboard-navbar">
+        <div className="username">User's Name</div>
+        <button className="logout-button">Logout</button>
       </div>
-      <form onSubmit={handleSubmit}>
-        {familyMembers.map((member, index) => (
-          <div key={index}>
-            <input
-              name="name"
-              type="text"
-              placeholder="Family Member's Name"
-              value={member.name}
-              onChange={event => handleInputChange(index, event)}
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Family Member's Email"
-              value={member.email}
-              onChange={event => handleInputChange(index, event)}
-            />
+      <div className="dashboard-card">
+        <form onSubmit={handleSubmit}>
+          <div className="dashboard-section">
+            <h2>Parents</h2>
+            {parents.map((parent, index) => (
+              <div key={index}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={parent.name}
+                  onChange={(e) => handleParentInputChange(index, e)}
+                />
+                <select
+                  name="relationship"
+                  value={parent.relationship}
+                  onChange={(e) => handleParentInputChange(index, e)}
+                >
+                  <option value="Mom">Mom</option>
+                  <option value="Dad">Dad</option>
+                </select>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={parent.email}
+                  onChange={(e) => handleParentInputChange(index, e)}
+                />
+              </div>
+            ))}
           </div>
-        ))}
-        <button type="button" onClick={handleAddSibling}>Add Sibling</button> 
-        <button type="submit">Submit</button>
-      </form>
+          <div className="dashboard-section">
+            <h2>Siblings</h2>
+            {siblings.map((sibling, index) => (
+              <div key={index}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={sibling.name}
+                  onChange={(e) => handleSiblingInputChange(index, e)}
+                />
+                <select
+                  name="relationship"
+                  value={sibling.relationship}
+                  onChange={(e) => handleSiblingInputChange(index, e)}
+                >
+                  <option value="Brother">Brother</option>
+                  <option value="Sister">Sister</option>
+                </select>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={sibling.email}
+                  onChange={(e) => handleSiblingInputChange(index, e)}
+                />
+                <button className="delete-button" type="button" onClick={() => handleDeleteSibling(index)}>x</button>
+              </div>
+            ))}
+            <button className="add-button" type="button" onClick={handleAddSibling}>+</button>
+          </div>
+          <button type="submit" className="submit-button">Submit</button>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
+

@@ -1,0 +1,118 @@
+/* Dashboard.css */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E4E9FB;
+    overflow: auto;
+    padding-top: 60px; /* Adjusting for fixed navbar */
+}
+
+.dashboard-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.username {
+    font-weight: bold;
+    padding-left: 20px; /* Padding to the left of the username */
+}
+
+.logout-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 20px; /* Padding to the right of the logout button */
+}
+
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 80%; /* Adjusted width for better layout */
+    margin-top: 20px; /* Distance from the navbar */
+}
+
+.dashboard-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dashboard-section h2 {
+    margin-bottom: 10px;
+}
+
+.family-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns items to the left */
+}
+
+.family-member {
+    flex: 1 1 48%; /* Each item takes almost half the width of the container */
+    margin-bottom: 10px;
+    padding-right: 10px; /* Added padding between fields */
+}
+
+.dashboard-section input, .dashboard-section select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Added space below each input */
+}
+
+.dashboard-section input:focus, .dashboard-section select:focus {
+    outline: 2px solid blue;
+}
+
+.add-button, .delete-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.add-button:hover, .delete-button:hover {
+    background-color: #45a049;
+}
+
+.submit-button {
+    background-color: #ADD8E6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 50%;
+    align-self: center;
+}
+
+.submit-button:hover {
+    background-color: #5CACEE;
+}
