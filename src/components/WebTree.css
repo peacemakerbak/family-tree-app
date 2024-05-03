@@ -1,0 +1,25 @@
+/* WebTree.css */
+
+/* Center the main card */
+.main-card {
+  background-color: rgb(94, 94, 170); /* Blue background */
+  color: white; /* White text */
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style for parent cards */
+.parent-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Style for sibling cards */
+.sibling-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Optionally, you can add more styles here for specific elements within the WebTree component */

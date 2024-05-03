@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import './Dashboard.css'; // Correct path for Dashboard.css
-import ParentCard from '../ParentCard'; // Adjusted import path for ParentCard
-import SiblingCard from '../SiblingCard'; // Adjusted import path for SiblingCard
-import ZoomControls from '../ZoomControls'; // Adjusted import path for ZoomControls
-
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import './Dashboard.css';
+import ParentCard from '../ParentCard';
+import SiblingCard from '../SiblingCard';
+import ZoomControls from '../ZoomControls';
 
 const Dashboard = () => {
+  const navigate = useNavigate(); // Get the navigate function from useNavigate
+
   const [parents, setParents] = useState([
     { name: '', relationship: 'Mom' },
     { name: '', relationship: 'Dad' }
@@ -40,7 +42,9 @@ const Dashboard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic to handle submission
+    // Logic to handle form submission
+    // After successful submission, navigate to /web
+    navigate('/web');
   };
 
   return (
@@ -114,3 +118,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
