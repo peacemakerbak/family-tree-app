@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import './Dashboard.css';
+import './Dashboard.css'; // Correct path for Dashboard.css
+import ParentCard from '../ParentCard'; // Adjusted import path for ParentCard
+import SiblingCard from '../SiblingCard'; // Adjusted import path for SiblingCard
+import ZoomControls from '../ZoomControls'; // Adjusted import path for ZoomControls
+
 
 const Dashboard = () => {
   const [parents, setParents] = useState([
