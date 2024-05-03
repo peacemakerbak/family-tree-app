@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #E4E9FB;
+    background-color: #e4e9fb;
   }
   
   .signup-container {
@@ -20,10 +20,12 @@
   .welcome-card {
     border: 2px solid rgb(124, 124, 206);
     border-radius: 10px; /* Rounded edges */
-    background-color: #FFFFFF; /* Different color inside the card */
+    background-color: #ffffff; /* Different color inside the card */
     padding: 20px;
     margin-top: 20px;
-    width: 550px; /* Adjust width as needed */
+    width: 70%; /* Adjust width as needed */
+    max-width: 550px; /* Maximum width for the card */
+    text-align: center; /* Center text */
   }
   
   .signup-title {
@@ -78,3 +80,8 @@
     color: #fff; /* Link color in footer */
   }
   
+  @media screen and (max-width: 768px) {
+    .welcome-card {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+}
