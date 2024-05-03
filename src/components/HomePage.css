@@ -1,0 +1,54 @@
+/* HomePage.css */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #E4E9FB;
+  }
+  
+  .signup-container {
+    border: 2px solid blue;
+    border-radius: 10px; /* Rounded edges */
+    background-color: #FFFFFF; /* Different color inside the card */
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  .signup-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup-container input {
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Border color for input fields */
+    border-radius: 5px; /* Rounded edges for input fields */
+    padding: 8px; /* Adjust padding as needed */
+  }
+  
+  .signup-container input:focus {
+    border-color: blue; /* Border color when input is focused */
+  }
+  
+  .signup-container button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded edges for buttons */
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .signup-container button:hover {
+    background-color: darkblue;
+  }
+  
+  .signup-container a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+  

@@ -1,4 +1,3 @@
-// Login.js
 // This component handles user login.
 // It provides a form for users to enter their email and password.
 

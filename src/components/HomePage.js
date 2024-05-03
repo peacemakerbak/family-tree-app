@@ -4,13 +4,14 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './HomePage.css'; // Import CSS file for HomePage styles
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="home-container">
       <h1>Welcome to the Family Tree Project</h1>
       <p>Build your family tree and connect with your lineage.</p>
-      <div style={{border: '1px solid blue'}}>
+      <div className="signup-container">
         <h2>Create Account</h2>
         <form>
           <input type="text" placeholder="Name" />
@@ -25,4 +26,5 @@ const HomePage = () => {
 }
 
 export default HomePage;
+
 
