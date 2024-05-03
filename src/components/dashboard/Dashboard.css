@@ -68,7 +68,7 @@
 }
 
 .family-member {
-    width: 48%; /* Ensures two members per row */
+    width: calc(48% - 10px); /* Ensures two members per row with space in between */
     margin-bottom: 10px;
     padding-right: 15px; /* More space between columns */
 }
@@ -130,4 +130,9 @@
 
 .submit-button:hover {
     background-color: #487894;
+}
+
+/* Adjust the width of the dropdown for siblings */
+.dashboard-section select {
+    width: calc(100% - 16px); /* Adjusted width for sibling dropdowns */
 }

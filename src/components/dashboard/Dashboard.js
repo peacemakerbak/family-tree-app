@@ -4,20 +4,20 @@ import './Dashboard.css';
 const Dashboard = () => {
   // State to hold parent information
   const [parents, setParents] = useState([
-    { name: '', relationship: 'Mom', email: '' },
-    { name: '', relationship: 'Dad', email: '' }
+    { name: '', relationship: 'Mom' },
+    { name: '', relationship: 'Dad' }
   ]);
 
   // State to hold sibling information
   const [siblings, setSiblings] = useState([
-    { name: '', relationship: 'Brother', email: '' },
-    { name: '', relationship: 'Sister', email: '' },
-    { name: '', relationship: 'Sister', email: '' }
+    { name: '', relationship: 'Brother' },
+    { name: '', relationship: 'Sister' },
+    { name: '', relationship: 'Sister' }
   ]);
 
   // Function to add an empty sibling input field
   const handleAddSibling = () => {
-    setSiblings([...siblings, { name: '', relationship: '', email: '' }]);
+    setSiblings([...siblings, { name: '', relationship: '' }]);
   };
 
   // Function to remove a sibling input field
@@ -44,7 +44,7 @@ const Dashboard = () => {
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic to send emails and handle submission
+    // Logic to handle submission
   };
 
   return (
@@ -54,7 +54,7 @@ const Dashboard = () => {
         <button className="logout-button">Logout</button>
       </div>
       <div>
-      <h3 className="h3-description"> Fill our your immidiate family members & we'll do the rest! </h3>
+        <h3 className="h3-description"> Fill out your immediate family members & lets get to building! </h3>
       </div>
       <div className="dashboard-card">
         <form onSubmit={handleSubmit}>
@@ -78,13 +78,6 @@ const Dashboard = () => {
                     <option value="Mom">Mom</option>
                     <option value="Dad">Dad</option>
                   </select>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={parent.email}
-                    onChange={(e) => handleParentInputChange(index, e)}
-                  />
                 </div>
               ))}
             </div>
@@ -109,13 +102,6 @@ const Dashboard = () => {
                     <option value="Brother">Brother</option>
                     <option value="Sister">Sister</option>
                   </select>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={sibling.email}
-                    onChange={(e) => handleSiblingInputChange(index, e)}
-                  />
                   {index >= 3 && (
                     <button className="delete-button" type="button" onClick={() => handleDeleteSibling(index)}>x</button>
                   )}
