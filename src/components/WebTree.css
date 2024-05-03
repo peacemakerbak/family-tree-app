@@ -1,3 +1,4 @@
+/* WebTree.css */
 
 .web-tree-container {
   display: flex;
@@ -14,14 +15,16 @@
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  border: 2px solid #0066cc;
+  border: 2px solid green;
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
 }
 
 .parent-cards {
-  position: relative;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
 }
 
 .parent-card {
@@ -29,27 +32,16 @@
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  border: 2px solid #0066cc;
+  border: 2px solid blue;
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
-  position: relative;
-}
-
-.parent-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  background-color: #000;
-  height: calc(100% - 40px);
-  transform: translateX(-50%);
 }
 
 .sibling-cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 
 .sibling-card {
@@ -57,33 +49,23 @@
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  border: 2px solid #0066cc;
+  border: 2px solid blue;
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
-  position: relative;
 }
 
-.sibling-card::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: calc(50% - 20px);
-  background-color: #000;
-  height: 2px;
-  transform: translateY(-50%);
+.line-parents {
+  display: flex;
 }
 
-.sibling-card::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: calc(50% - 20px);
-  background-color: #000;
-  height: 2px;
-  transform: translateY(-50%);
+.line-siblings {
+  display: flex;
+}
+
+.line {
+  background-color: black;
+  width: 2px;
 }
 
 .back-button {

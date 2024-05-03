@@ -25,6 +25,11 @@ const WebTree = () => {
       <div className="main-card">
         <p>This is you.</p>
       </div>
+      {/* Lines connecting main card to parent cards */}
+      <div className="line-parents">
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
       {/* Parent cards at the top */}
       <div className="parent-cards">
         {parents.map((parent, index) => (
@@ -37,10 +42,14 @@ const WebTree = () => {
           <SiblingCard key={index} name={sibling.name} relationship={sibling.relationship} />
         ))}
       </div>
+      {/* Lines connecting main card to sibling cards */}
+      <div className="line-siblings">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
     </div>
   );
 };
 
 export default WebTree;
-
-
