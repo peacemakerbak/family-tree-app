@@ -7,7 +7,7 @@
     min-height: 100vh;
     background-color: #E4E9FB;
     overflow: auto;
-    padding-top: 60px; /* Adjusting for fixed navbar */
+    padding-top: 50px; /* Slightly less space between navbar and card */
 }
 
 .dashboard-navbar {
@@ -24,7 +24,7 @@
 
 .username {
     font-weight: bold;
-    padding-left: 20px; /* Padding to the left of the username */
+    padding-left: 20px;
 }
 
 .logout-button {
@@ -34,19 +34,20 @@
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
-    margin-right: 20px; /* Padding to the right of the logout button */
+    margin-right: 20px;
 }
 
 .dashboard-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* Needed for absolute positioning of the '+' button inside */
     background-color: #FFFFFF;
     padding: 20px;
-    border: 2px solid #ccc;
+    border: 2px solid blue; /* Added blue border */
     border-radius: 10px;
-    width: 80%; /* Adjusted width for better layout */
-    margin-top: 20px; /* Distance from the navbar */
+    width: 60%; /* Adjusted width for smaller overall size */
+    margin-top: 90px; /* Reduced margin-top to bring card closer to navbar */
 }
 
 .dashboard-section {
@@ -54,32 +55,25 @@
     margin-bottom: 20px;
 }
 
-.dashboard-section h2 {
-    margin-bottom: 10px;
-}
-
 .family-group {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Aligns items to the left */
+    justify-content: space-between;
 }
 
 .family-member {
-    flex: 1 1 48%; /* Each item takes almost half the width of the container */
+    width: 48%; /* Ensures two members per row */
     margin-bottom: 10px;
-    padding-right: 10px; /* Added padding between fields */
+    padding-right: 15px; /* Increased padding for more space between columns */
+    box-sizing: border-box;
 }
 
 .dashboard-section input, .dashboard-section select {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px; /* Added space below each input */
-}
-
-.dashboard-section input:focus, .dashboard-section select:focus {
-    outline: 2px solid blue;
+    margin-bottom: 5px;
 }
 
 .add-button, .delete-button {
@@ -97,6 +91,14 @@
     font-weight: bold;
 }
 
+.add-button {
+    background-color: #ADD8E6; /* Light blue background */
+    padding: 3px 7px; /* Smaller padding for a smaller button */
+    position: absolute; /* Positioning the button at the bottom right */
+    bottom: 20px; /* Distance from the bottom of the card */
+    right: 20px; /* Distance from the right of the card */
+}
+
 .add-button:hover, .delete-button:hover {
     background-color: #45a049;
 }
@@ -109,8 +111,8 @@
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
-    width: 50%;
-    align-self: center;
+    width: 30%; /* Smaller and more centered button */
+    align-self: center; /* Ensures button is centered */
 }
 
 .submit-button:hover {

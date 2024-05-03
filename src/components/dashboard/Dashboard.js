@@ -22,11 +22,9 @@ const Dashboard = () => {
 
   // Function to remove a sibling input field
   const handleDeleteSibling = (index) => {
-    if (siblings.length > 3) {
-      const updatedSiblings = [...siblings];
-      updatedSiblings.splice(index, 1);
-      setSiblings(updatedSiblings);
-    }
+    const updatedSiblings = [...siblings];
+    updatedSiblings.splice(index, 1);
+    setSiblings(updatedSiblings);
   };
 
   // Function to handle input changes for parents
@@ -59,63 +57,69 @@ const Dashboard = () => {
         <form onSubmit={handleSubmit}>
           <div className="dashboard-section">
             <h2>Parents</h2>
-            {parents.map((parent, index) => (
-              <div key={index}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={parent.name}
-                  onChange={(e) => handleParentInputChange(index, e)}
-                />
-                <select
-                  name="relationship"
-                  value={parent.relationship}
-                  onChange={(e) => handleParentInputChange(index, e)}
-                >
-                  <option value="Mom">Mom</option>
-                  <option value="Dad">Dad</option>
-                </select>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={parent.email}
-                  onChange={(e) => handleParentInputChange(index, e)}
-                />
-              </div>
-            ))}
+            <div className="family-group">
+              {parents.map((parent, index) => (
+                <div key={index} className="family-member">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={parent.name}
+                    onChange={(e) => handleParentInputChange(index, e)}
+                  />
+                  <select
+                    name="relationship"
+                    value={parent.relationship}
+                    onChange={(e) => handleParentInputChange(index, e)}
+                  >
+                    <option value="Mom">Mom</option>
+                    <option value="Dad">Dad</option>
+                  </select>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={parent.email}
+                    onChange={(e) => handleParentInputChange(index, e)}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="dashboard-section">
             <h2>Siblings</h2>
-            {siblings.map((sibling, index) => (
-              <div key={index}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={sibling.name}
-                  onChange={(e) => handleSiblingInputChange(index, e)}
-                />
-                <select
-                  name="relationship"
-                  value={sibling.relationship}
-                  onChange={(e) => handleSiblingInputChange(index, e)}
-                >
-                  <option value="Brother">Brother</option>
-                  <option value="Sister">Sister</option>
-                </select>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={sibling.email}
-                  onChange={(e) => handleSiblingInputChange(index, e)}
-                />
-                <button className="delete-button" type="button" onClick={() => handleDeleteSibling(index)}>x</button>
-              </div>
-            ))}
-            <button className="add-button" type="button" onClick={handleAddSibling}>+</button>
+            <div className="family-group">
+              {siblings.map((sibling, index) => (
+                <div key={index} className="family-member">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={sibling.name}
+                    onChange={(e) => handleSiblingInputChange(index, e)}
+                  />
+                  <select
+                    name="relationship"
+                    value={sibling.relationship}
+                    onChange={(e) => handleSiblingInputChange(index, e)}
+                  >
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                  </select>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={sibling.email}
+                    onChange={(e) => handleSiblingInputChange(index, e)}
+                  />
+                  {index >= 3 && (
+                    <button className="delete-button" type="button" onClick={() => handleDeleteSibling(index)}>x</button>
+                  )}
+                </div>
+              ))}
+              <button className="add-button" type="button" onClick={handleAddSibling}>+</button>
+            </div>
           </div>
           <button type="submit" className="submit-button">Submit</button>
         </form>
@@ -125,4 +129,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
