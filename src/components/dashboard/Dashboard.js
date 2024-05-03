@@ -2,46 +2,38 @@ import React, { useState } from 'react';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  // State to hold parent information
   const [parents, setParents] = useState([
     { name: '', relationship: 'Mom' },
     { name: '', relationship: 'Dad' }
   ]);
 
-  // State to hold sibling information
   const [siblings, setSiblings] = useState([
     { name: '', relationship: 'Brother' },
     { name: '', relationship: 'Sister' },
     { name: '', relationship: 'Sister' }
   ]);
 
-  // Function to add an empty sibling input field
   const handleAddSibling = () => {
     setSiblings([...siblings, { name: '', relationship: '' }]);
   };
 
-  // Function to remove a sibling input field
   const handleDeleteSibling = (index) => {
-    const updatedSiblings = [...siblings];
-    updatedSiblings.splice(index, 1);
+    const updatedSiblings = siblings.filter((_, i) => i !== index);
     setSiblings(updatedSiblings);
   };
 
-  // Function to handle input changes for parents
   const handleParentInputChange = (index, event) => {
     const values = [...parents];
     values[index][event.target.name] = event.target.value;
     setParents(values);
   };
 
-  // Function to handle input changes for siblings
   const handleSiblingInputChange = (index, event) => {
     const values = [...siblings];
     values[index][event.target.name] = event.target.value;
     setSiblings(values);
   };
 
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     // Logic to handle submission

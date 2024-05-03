@@ -74,7 +74,7 @@
 }
 
 .dashboard-section input, .dashboard-section select {
-    width: 100%;
+    width: calc(100% - 16px); /* Adjusted width to accommodate spacing */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
