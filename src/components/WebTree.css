@@ -1,25 +1,53 @@
 /* WebTree.css */
+.web-tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #F4F6F8; /* Warmer background color */
+  padding-top: 30px;
+}
 
-/* Center the main card */
 .main-card {
-  background-color: rgb(94, 94, 170); /* Blue background */
-  color: white; /* White text */
-  text-align: center;
+  border: 2px solid #4CAF50; /* Green outline */
+  border-radius: 10px; /* Rounded corners */
   padding: 20px;
+  background-color: #FFFFFF; /* White background inside the card */
   margin-bottom: 20px;
 }
 
-/* Style for parent cards */
 .parent-cards {
   display: flex;
   justify-content: space-between;
+  width: 60%;
   margin-bottom: 20px;
 }
 
-/* Style for sibling cards */
 .sibling-cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width: 60%;
 }
 
-/* Optionally, you can add more styles here for specific elements within the WebTree component */
+.parent-card,
+.sibling-card {
+  border: 2px solid #FF8C00; /* Orange outline */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #FFFFE0; /* Warm background color */
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #4CAF50; /* Green background */
+  color: #FFFFFF; /* White text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+}
+
