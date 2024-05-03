@@ -53,6 +53,9 @@ const Dashboard = () => {
         <div className="username">User's Name</div>
         <button className="logout-button">Logout</button>
       </div>
+      <div>
+      <h3 className="h3-description"> Fill our your immidiate family members & we'll do the rest! </h3>
+      </div>
       <div className="dashboard-card">
         <form onSubmit={handleSubmit}>
           <div className="dashboard-section">

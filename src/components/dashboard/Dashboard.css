@@ -7,7 +7,7 @@
     min-height: 100vh;
     background-color: #E4E9FB;
     overflow: auto;
-    padding-top: 50px; /* Slightly less space between navbar and card */
+    padding-top: 30px; /* Adjusted for better spacing */
 }
 
 .dashboard-navbar {
@@ -37,17 +37,23 @@
     margin-right: 20px;
 }
 
+.h3-description {
+    margin-top: 40px; /* Space below navbar */
+    text-align: center;
+    width: 100%;
+}
+
 .dashboard-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; /* Needed for absolute positioning of the '+' button inside */
     background-color: #FFFFFF;
     padding: 20px;
-    border: 2px solid blue; /* Added blue border */
+    border: 2px solid blue;
     border-radius: 10px;
-    width: 60%; /* Adjusted width for smaller overall size */
-    margin-top: 90px; /* Reduced margin-top to bring card closer to navbar */
+    width: 60%;
+    margin-top: 20px; /* Adjusted for visual balance */
+    position: relative; /* Needed for positioning the '+' button */
 }
 
 .dashboard-section {
@@ -64,8 +70,7 @@
 .family-member {
     width: 48%; /* Ensures two members per row */
     margin-bottom: 10px;
-    padding-right: 15px; /* Increased padding for more space between columns */
-    box-sizing: border-box;
+    padding-right: 15px; /* More space between columns */
 }
 
 .dashboard-section input, .dashboard-section select {
@@ -92,15 +97,23 @@
 }
 
 .add-button {
-    background-color: #ADD8E6; /* Light blue background */
-    padding: 3px 7px; /* Smaller padding for a smaller button */
-    position: absolute; /* Positioning the button at the bottom right */
-    bottom: 20px; /* Distance from the bottom of the card */
-    right: 20px; /* Distance from the right of the card */
+    background-color: #ADD8E6;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
-.add-button:hover, .delete-button:hover {
-    background-color: #45a049;
+.delete-button {
+    background-color: #FFA07A; /* Light red background */
+    padding: 3px 7px; /* Smaller padding for a smaller button */
+}
+
+.delete-button:hover {
+    background-color: #DC143C; /* Darker red on hover */
+}
+
+.add-button:hover {
+    background-color: #5CACEE;
 }
 
 .submit-button {
@@ -111,10 +124,10 @@
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
-    width: 30%; /* Smaller and more centered button */
-    align-self: center; /* Ensures button is centered */
+    width: 10%; /* Smaller width */
+    align-self: center; /* Ensures button is centered in the dashboard card */
 }
 
 .submit-button:hover {
-    background-color: #5CACEE;
+    background-color: #487894;
 }
