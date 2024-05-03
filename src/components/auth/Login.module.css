@@ -1,0 +1,79 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e4e9fb; /* Matching the homepage background */
+  }
+  
+  .navBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .backButton {
+    background-color: #ADD8E6;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded corners but still rectangular */
+    cursor: pointer;
+  }
+  
+  .loginCard {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid blue;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 50px; /* Ensure space for navbar */
+  }
+  
+  .inputField {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .loginButton {
+    width: calc(100% - 30px);
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .loginButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .forgotPasswordLink {
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+  }
+  
+  .forgotPasswordLink:hover {
+    text-decoration: underline;
+  }
+  
